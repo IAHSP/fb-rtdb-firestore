@@ -2,11 +2,12 @@
 
 const fs = require('fs');
 const firebase = require('firebase');
+const serviceAccount = require("./firebase-credentials.json");
 
 // Get this info from other Firebase projects you have RTDB established.
 firebase.initializeApp({
-  projectId: "",
-  apiKey: "",
+  projectId: serviceAccount.project_id,
+  apiKey: serviceAccount.private_key_id
 });
 const db = firebase.firestore();
 
